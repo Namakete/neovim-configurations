@@ -3,7 +3,7 @@ local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
-local servers = { "html", "cssls"}
+local servers = { "html", "cssls", "tsserver"}
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -13,8 +13,29 @@ for _, lsp in ipairs(servers) do
   }
 end
 
--- typescript | javascript
+-- typescript | javascript | vue
 lspconfig.tsserver.setup {
+  on_attach = on_attach,
+  on_init = on_init,
+  capabilities = capabilities,
+  init_options = {
+    plugins = {
+      {
+        name = "@vue/typescript-plugin",
+        location = "/usr/local/lib/node_modules/@vue/typescript-plugin",
+        languages = {"javascript", "typescript", "vue"},
+      },
+    },
+  },
+  filetypes = {
+    "javascript",
+    "typescript",
+    "vue",
+  },
+}
+
+-- tailwindcss
+lspconfig.tailwindcss.setup{
   on_attach = on_attach,
   on_init = on_init,
   capabilities = capabilities,
@@ -56,13 +77,6 @@ lspconfig.jdtls.setup {
 
 -- groovy
 lspconfig.groovyls.setup {
-  on_attach = on_attach,
-  on_init = on_init,
-  capabilities = capabilities,
-}
-
--- volar
-lspconfig.volar.setup {
   on_attach = on_attach,
   on_init = on_init,
   capabilities = capabilities,
