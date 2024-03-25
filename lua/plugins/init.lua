@@ -5,6 +5,7 @@ return {
       require "configs.conform"
     end,
   },
+
   {
     "neovim/nvim-lspconfig",
     config = function()
@@ -43,7 +44,7 @@ return {
   },
   {
     "ray-x/go.nvim",
-    dependencies = { -- optional packages
+    dependencies = {
       "ray-x/guihua.lua",
       "neovim/nvim-lspconfig",
       "nvim-treesitter/nvim-treesitter",
@@ -56,14 +57,15 @@ return {
     build = ':lua require("go.install").update_all_sync()',
   },
   {
-    "Exafunction/codeium.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "hrsh7th/nvim-cmp",
-    },
+    "Exafunction/codeium.vim",
+    event = "BufEnter",
+  },
+  {
+    "folke/trouble.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    cmd = { "TroubleToggle", "Trouble" },
     config = function()
-      require("codeium").setup {}
+      require("trouble").setup()
     end,
-    event = { "CmdlineEnter" },
   },
 }
