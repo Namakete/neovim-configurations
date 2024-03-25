@@ -100,3 +100,10 @@ lspconfig.eslint.setup {
   capabilities = capabilities,
   root_dir = require("lspconfig").util.root_pattern("eslint.config.js", ".eslintrc.js", ".eslintrc.json", ".eslintrc"),
 }
+
+-- json | jsonc
+lspconfig.jsonls.setup {
+  on_attach = on_attach,
+  on_init = on_init,
+  capabilities = capabilities,
+}
