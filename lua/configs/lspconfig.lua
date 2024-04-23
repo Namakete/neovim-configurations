@@ -16,9 +16,11 @@ end
 -- typescript | javascript | vue
 lspconfig.tsserver.setup {
   on_attach = function(client, bufnr)
+    if vim.bo[bufnr].filetype == "vue" then
     client.server_capabilities.documentFormattingProvider = false
     client.server_capabilities.documentRangeFormattingProvider = false
     on_attach(client, bufnr)
+    end
   end,
   on_init = on_init,
   capabilities = capabilities,
