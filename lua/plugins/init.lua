@@ -139,6 +139,9 @@ return {
             hide_gitignored = false,
             hide_by_name = {
               "node_modules",
+              ".git",
+              ".vscode",
+              ".intellij",
             },
             never_show = {
               ".DS_Store",
