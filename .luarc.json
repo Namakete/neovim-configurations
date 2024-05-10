@@ -3,5 +3,8 @@
         "vim",
         "highlights",
         "base46"
+    ],
+    "diagnostics.disable": [
+        "unused-local"
     ]
 }

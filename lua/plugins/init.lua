@@ -69,7 +69,7 @@ return {
     end,
   },
   {
-    "kdheepak/lazygit.nvim",
+    "dheepak/lazygit.nvim",
     cmd = {
       "LazyGit",
       "LazyGitConfig",
@@ -130,7 +130,7 @@ return {
         },
         window = {
           position = "float",
-          width = 35,
+          width = 40,
         },
         filesystem = {
           use_libuv_file_watcher = true,

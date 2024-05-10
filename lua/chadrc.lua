@@ -57,6 +57,8 @@ M.ui = {
 
   hl_add = {
     NeoTreeNormal = { bg = "darker_black" },
+    NeoTreeFloatTitle = { bg = "red", fg = "darker_black" },
+    NeoTreeGitDeleted = { fg = "red" },
   },
 }
 
