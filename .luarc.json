@@ -2,7 +2,8 @@
     "diagnostics.globals": [
         "vim",
         "highlights",
-        "base46"
+        "base46",
+        "orders"
     ],
     "diagnostics.disable": [
         "unused-local"
