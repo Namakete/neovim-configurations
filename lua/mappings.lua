@@ -14,6 +14,9 @@ map("n", "<F2>", "<cmd>NvimTreeToggle<CR>", { desc = "Nvimtree Toggle window" })
 -- NeoTree
 map("n", "<leader>e", "<cmd>Neotree toggle float<CR>", { desc = "NeoTree Toggle Window" })
 
+-- NeoTree
+map("n", "<leader>tt", "<cmd>TailwindFoldToggle<CR>", { desc = "Tailwind Fold Toggle" })
+
 -- Codeium
 map("i", "<C-x>", function()
   return vim.fn["codeium#Accept"]()
